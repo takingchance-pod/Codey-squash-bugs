@@ -1,0 +1,51 @@
+* {
+    margin: 20px;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    /* build grid inside of here */
+}
+
+.move-bar {
+    border: 1px solid black;
+    height: 50px;
+}
+
+.viewport {
+    border: 1px solid black;
+    height: 300px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-info {
+    border: 1px solid black;
+    height: 150px;
+    width: 300px;
+}
+
+.player-menu {
+    border: 1px solid black;
+    height: 150px;
+    width: 300px;
+}
+
+.enemy-info {
+    border: 1px solid black;
+    height: 150px;
+    width: 300px;
+}
+
+@media screen and (min-width: 992px) {
+    header:nth-of-type(1) ~ * {
+        max-width: 810px;
+        margin: 0 auto;
+    }
