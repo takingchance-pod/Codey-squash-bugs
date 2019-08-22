@@ -35,6 +35,11 @@ main {
     justify-content: space-around;
 }
 
+.viewport-image-container img {
+    height: 200px;
+    margin: 0px;
+}
+
 .menu-container {
     grid-area: 3 / 1 / 4 / 4;
     display: flex;
@@ -58,11 +63,11 @@ main {
     text-align: center;
 }
 
-.hero-info ul {
+.hero-info ul, .enemy-info ul {
     list-style: none;
 }
 
-.hero-info li {
+.hero-info li, .enemy-info li {
     margin: 5px;
 }
 
@@ -71,6 +76,13 @@ main {
     height: 150px;
     width: 300px;
     margin-top: 0px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.player-menu button {
+    font-size: 2em;
+    padding: 5px;
     border-radius: 5px;
 }
 

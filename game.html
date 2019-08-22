@@ -17,10 +17,10 @@
             </div>
             <div id="viewport-image-container" class="viewport-image-container">
                 <div id="hero-avatar-container" class="hero-avatar-container">
-                    Hero image goes here
+                    <img src="img/codey.png" alt="Codey the Duck avatar">
                 </div>
                 <div id="enemy-avatar-container" class="enemy-avatar-container">
-                    Enemy image goes here
+                    <img src="img/bug.png" alt="Bug enemy avatar">
                 </div>
             </div>
         </section>
@@ -28,20 +28,28 @@
             <section id="hero-info" class="hero-info">
                 <h3>Codey</h3>
                 <ul>
-                    <li>HP: xx</li>
-                    <li>Codey attacks for... </li>
+                    <li id="hero-hp">HP: xx</li>
+                    <li id="hero-message">
+                        Codey the Junior Developer
+                    </li>
                 </ul>
             </section>
             <section id="player-menu" class="player-menu">
                 <h3>Player Menu</h3>
+                <button id="continue-button">Continue</button>
             </section>
             <section id="enemy-info" class="enemy-info">
                 <h3>Enemy Info (starts hidden)</h3>
+                <ul>
+                    <li id="enemy-hp">HP: xx</li>
+                    <li id="enemy-message">
+                        A Bug
+                    </li>
+                </ul>
             </section>
         </section>
     </main>
 
-
-
+    <script src="javascript/game.js"></script>
 </body>
 </html>
