@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combat Sandbox</title>
+    <style>
+        .player-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .hero, .enemy {
+            border: 1px solid black;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        div p, div li {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="player-container">
+    <div class="hero">
+        <h2>Hero</h2>
+        <p id="hero-hp">HP: 50</p>
+    </div>
+    <div class="enemy">
+        <h2>Enemy</h2>
+        <p id="enemy-hp">HP: 30</p>
+    </div>
+</div>
+
+<div class="message-container">
+    <!--        <p id="message-display">Game messages go here.</p>-->
+    <ul>
+        <li id="hero-message"></li>
+        <li id="enemy-message"></li>
+    </ul>
+</div>
+
+<button id="continue-button">Continue</button>
+
+<script>
+    var heroMessage = document.getElementById("hero-message");
+    var enemyMessage = document.getElementById("enemy-message");
+    heroMessage.innerHTML = "Let's get this party started.";
+
+    var heroHP = 50;
+
+    function generateEnemyHP () {
+        return Math.floor(Math.random() * (40 - 20 + 1) + 20);
+    }
+    var enemyHP = generateEnemyHP();
+    document.getElementById("enemy-hp").innerHTML = enemyHP;
+
+    function heroAttacks() {
+        var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+        heroMessage.innerHTML = "Hero deals " + heroAttackValue + " damage.";
+        enemyHP -= heroAttackValue;
+        if (enemyHP > 0) {
+            document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
+        } else {
+            document.getElementById("enemy-hp").innerHTML = "HP: 0";
+        }
+    }
+
+    function enemyAttacks() {
+        var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+        enemyMessage.innerHTML = "Enemy deals " + enemyAttackValue + " damage.";
+        heroHP -= enemyAttackValue;
+        if (heroHP > 0) {
+            document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
+        } else {
+            document.getElementById("hero-hp").innerHTML = "HP: 0";
+        }
+    }
+
+    function initiateAttack() {
+        heroAttacks();
+        if (enemyHP <= 0) {
+            heroMessage.innerHTML = "The hero defeated the enemy!";
+            enemyMessage.innerHTML = "";
+            document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
+        } else {
+            enemyAttacks();
+            if (heroHP <= 0) {
+                heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
+                enemyMessage.innerHTML = "";
+                document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
+            }
+        }
+    }
+
+    document.getElementById("continue-button").addEventListener("click", initiateAttack, false);
+</script>
+
+
+</body>
+</html>
+
