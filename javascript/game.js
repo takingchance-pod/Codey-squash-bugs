@@ -20,9 +20,10 @@
 
     //Define function for hero's attack
     function heroAttacks() {
+        enemyMessage.innerHTML = "";
         var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
         heroMessage.innerHTML = "Hero deals " + heroAttackValue + " damage.";
-        enemyHP -= heroAttackValue;
+               enemyHP -= heroAttackValue;
         if (enemyHP > 0) {
             document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
         } else {
@@ -32,6 +33,7 @@
 
     //Define function for enemy's attack
     function enemyAttacks() {
+        heroMessage.innerHTML = "";
         var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
         enemyMessage.innerHTML = "Enemy deals " + enemyAttackValue + " damage.";
         heroHP -= enemyAttackValue;
@@ -50,17 +52,26 @@
             enemyMessage.innerHTML = "";
             document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
         } else {
-            enemyAttacks();
+            setTimeout(enemyAttacks, 1500);
             if (heroHP <= 0) {
                 heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
                 enemyMessage.innerHTML = "";
                 document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
             }
         }
+        setTimeout(function() {
+            enemyMessage.innerHTML = "";
+        }, 3000)
     }
+
+
+    // Animation Piece
+
 
     //Assign event listener to "Proceed" button that initiates and clicks through combat
     document.getElementById("continue-button").addEventListener("click", initiateAttack, false);
+
+
 
 
 })();
