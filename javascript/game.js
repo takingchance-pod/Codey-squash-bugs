@@ -69,7 +69,12 @@
 
 
     //Assign event listener to "Proceed" button that initiates and clicks through combat
-    document.getElementById("continue-button").addEventListener("click", initiateAttack, false);
+
+    //Need to use jQuery to change the property of attack from display: hidden to display: initial
+        // document.getElementById("continue-button").addEventListener("click", )
+
+    //This used to be on the "continue-button"
+    document.getElementById("attack-button").addEventListener("click", initiateAttack, false);
 
 
 

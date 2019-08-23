@@ -19,6 +19,10 @@ main {
     grid-template-columns: 1fr;
 }
 
+.start-hidden {
+    display: none;
+}
+
 .move-bar {
     border: 1px solid black;
     height: 100px;
