@@ -1,20 +1,24 @@
-(function(){
+$(document).ready(function() {
     "use strict";
 
     //Declare where hero & enemy text displays.
     var heroMessage = document.getElementById("hero-message");
     var enemyMessage = document.getElementById("enemy-message");
-    heroMessage.innerHTML = "Let's get this party started.";
-
 
     //Declare and display initial hero HP
     var heroHP = 50;
     document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
+    //heroMessage.innerHTML = "Let's get this party started.";
+
+    function generateNewEnemy() {
+    //var enemyHP =
+    }
 
     //Declare and display initial enemy HP
-    function generateEnemyHP () {
+    function generateEnemyHP() {
         return Math.floor(Math.random() * (40 - 20 + 1) + 20);
     }
+
     var enemyHP = generateEnemyHP();
     document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
 
@@ -23,7 +27,7 @@
         enemyMessage.innerHTML = "";
         var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
         heroMessage.innerHTML = "Hero deals " + heroAttackValue + " damage.";
-               enemyHP -= heroAttackValue;
+        enemyHP -= heroAttackValue;
         if (enemyHP > 0) {
             document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
         } else {
@@ -33,7 +37,7 @@
 
     //Define function for enemy's attack
     function enemyAttacks() {
-        heroMessage.innerHTML = "";
+        heroMessage.innerHTML = "<br>";
         var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
         enemyMessage.innerHTML = "Enemy deals " + enemyAttackValue + " damage.";
         heroHP -= enemyAttackValue;
@@ -49,7 +53,9 @@
         heroAttacks();
         if (enemyHP <= 0) {
             heroMessage.innerHTML = "The hero defeated the enemy!";
+            $("#attack-button").css("visibility", "hidden");
             enemyMessage.innerHTML = "";
+            $("#continue-button").css("visibility", "visible");
             document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
         } else {
             setTimeout(enemyAttacks, 1500);
@@ -59,7 +65,7 @@
                 document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
             }
         }
-        setTimeout(function() {
+        setTimeout(function () {
             enemyMessage.innerHTML = "";
         }, 3000)
     }
@@ -70,13 +76,15 @@
 
     //Assign event listener to "Proceed" button that initiates and clicks through combat
 
-    //Need to use jQuery to change the property of attack from display: hidden to display: initial
-        // document.getElementById("continue-button").addEventListener("click", )
+    function displayAttackHideContinue() {
+        $("#attack-button").css("visibility", "visible");
+        $("#continue-button").css("visibility", "hidden");
+    }
+
+    document.getElementById("continue-button").addEventListener("click", displayAttackHideContinue, false);
+    // document.getElementById("continue-button").addEventListener("click", )
 
     //This used to be on the "continue-button"
     document.getElementById("attack-button").addEventListener("click", initiateAttack, false);
 
-
-
-
-})();
+});

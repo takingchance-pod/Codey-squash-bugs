@@ -20,7 +20,13 @@ main {
 }
 
 .start-hidden {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
+}
+
+.start-displayed {
+    /*display: initial;*/
+    visibility: visible;
 }
 
 .move-bar {
