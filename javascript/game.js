@@ -5,23 +5,21 @@ $(document).ready(function() {
     var heroMessage = document.getElementById("hero-message");
     var enemyMessage = document.getElementById("enemy-message");
 
-//Declare and display initial hero HP
+//Declare hero & enemy HP variables, and display hero HP
     var heroHP = 10;
     var enemyHP;
     document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
-    //heroMessage.innerHTML = "Let's get this party started.";
 
 //Upon clicking the Continue Button, a new battle is prepared
     document.getElementById("continue-button").addEventListener("click", displayEnemyEncounter, false);
 
     function displayEnemyEncounter() {
         $("#hero-message").text("Uh-oh, a Bug has appeared in the code...");
-        $("#continue-button").css("visibility", "hidden");
-        $("#attack-button").css("visibility", "visible");
+        $("#continue-button").css("display", "none");
+        $("#attack-button").css("display", "inline");
 
         //Embedded function to generate new enemy and display Enemy Info Window
         function generateNewEnemy() {
-
             //enemyHP = Math.floor(Math.random() * (40 - 20 + 1) + 20);
             enemyHP = Math.floor(Math.random() * (10 - 5 + 1) + 5);
             $("#enemy-info").css("visibility", "visible");
@@ -38,12 +36,12 @@ $(document).ready(function() {
         heroAttacks();
         if (enemyHP <= 0) {
             heroMessage.innerHTML = "Codey squashed the bug!";
-            $("#attack-button").css("visibility", "hidden");
+            $("#attack-button").css("display", "none");
             $("#enemy-info").css("visibility", "hidden");
             enemyMessage.innerHTML = "";
-            $("#continue-button").css("visibility", "visible");
+            $("#continue-button").css("display", "inline");
             document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
-        } else {
+        } else  {
             setTimeout(enemyAttacks, 1500);
             if (heroHP <= 0) {
                 heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
@@ -52,7 +50,6 @@ $(document).ready(function() {
                 setTimeout(function () {
                     enemyMessage.innerHTML = "";
                 }, 3000)
-                //document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
             }
         }
         setTimeout(function () {
@@ -85,23 +82,10 @@ $(document).ready(function() {
         } else {
             document.getElementById("hero-hp").innerHTML = "HP: 0";
             heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
-            //enemyMessage.innerHTML = "";
             $("#attack-button").css("visibility", "hidden");
         }
     }
 
-
-
-
     // Animation Piece
-
-
-
-
-
-
-
-
-
 
 });

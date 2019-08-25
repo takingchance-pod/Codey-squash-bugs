@@ -20,13 +20,15 @@ main {
 }
 
 .start-hidden {
-    /*display: none;*/
     visibility: hidden;
 }
 
 .start-displayed {
-    /*display: initial;*/
     visibility: visible;
+}
+
+.start-removed {
+    display: none;
 }
 
 .move-bar {
@@ -77,7 +79,7 @@ main {
     border-radius: 5px;
 }
 
-.hero-info h3, .player-menu h3, .enemy-info h3 {
+.hero-info h3, .player-menu h3, .enemy-info h3, .player-menu * {
     text-align: center;
 }
 
