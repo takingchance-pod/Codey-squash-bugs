@@ -3,9 +3,10 @@
     padding: 0;
 }
 
-
-
-
+/*Use for trouble-shooting layout issues*/
+.test {
+    border: dashed purple 2px;
+}
 
 h1 {
     text-align: center;

@@ -6,7 +6,7 @@ $(document).ready(function() {
     var enemyMessage = document.getElementById("enemy-message");
 
 //Declare hero & enemy HP variables, and display hero HP
-    var heroHP = 10;
+    var heroHP = 2;
     var enemyHP;
     document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
 
@@ -14,6 +14,7 @@ $(document).ready(function() {
     document.getElementById("continue-button").addEventListener("click", displayEnemyEncounter, false);
 
     function displayEnemyEncounter() {
+        $("#enemy-avatar-container").css("visibility", "visible");
         $("#hero-message").text("Uh-oh, a Bug has appeared in the code...");
         $("#continue-button").css("display", "none");
         $("#attack-button").css("display", "inline");
@@ -33,9 +34,11 @@ $(document).ready(function() {
 
     //Define function that runs through a single combat encounter
     function initiateAttack() {
+        $("#attack-button").hide();
         heroAttacks();
         if (enemyHP <= 0) {
             heroMessage.innerHTML = "Codey squashed the bug!";
+            $("#enemy-avatar-container").css("visibility", "hidden");
             $("#attack-button").css("display", "none");
             $("#enemy-info").css("visibility", "hidden");
             enemyMessage.innerHTML = "";
@@ -44,6 +47,11 @@ $(document).ready(function() {
         } else  {
             setTimeout(enemyAttacks, 1500);
             if (heroHP <= 0) {
+                //Buggy code: cannot get duck avatar to disappear upon game over conditions
+                    // $("#hero-avatar-container").css("visibility", "hidden");
+                    // $("#hero-avatar-container").hide();
+                    // $("#hero-avatar-container").css("display", "none");
+                    // $(".test1").hide();
                 heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
                 enemyMessage.innerHTML = "";
                 $("#attack-button").css("visibility", "hidden");
@@ -54,7 +62,9 @@ $(document).ready(function() {
         }
         setTimeout(function () {
             enemyMessage.innerHTML = "";
+            $("#attack-button").show();
         }, 3000)
+
     }
 
 
