@@ -19,6 +19,18 @@ main {
     grid-template-columns: 1fr;
 }
 
+.start-hidden {
+    visibility: hidden;
+}
+
+.start-displayed {
+    visibility: visible;
+}
+
+.start-removed {
+    display: none;
+}
+
 .move-bar {
     border: 1px solid black;
     height: 100px;
@@ -67,7 +79,7 @@ main {
     border-radius: 5px;
 }
 
-.hero-info h3, .player-menu h3, .enemy-info h3 {
+.hero-info h3, .player-menu h3, .enemy-info h3, .player-menu * {
     text-align: center;
 }
 
