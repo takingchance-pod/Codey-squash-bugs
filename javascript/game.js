@@ -49,11 +49,6 @@ $(document).ready(function() {
         } else  {
             setTimeout(enemyAttacks, 1500);
             if (heroHP <= 0) {
-                //Buggy code: cannot get duck avatar to disappear upon game over conditions
-                    // $("#hero-avatar-container").css("visibility", "hidden");
-                    // $("#hero-avatar-container").hide();
-                    // $("#hero-avatar-container").css("display", "none");
-                    // $(".test1").hide();
                 setTimeout(function () {
                     enemyMessage.innerHTML = "";
                 }, 3000)
