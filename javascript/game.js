@@ -1,19 +1,13 @@
 $(document).ready(function() {
     "use strict";
 
-//Declare where hero & enemy text displays.
-    var heroMessage = document.getElementById("hero-message");
-    // var heroMessage = $("#hero-message").html();
-    var enemyMessage = document.getElementById("enemy-message");
-    // var enemyMessage = $("#enemy-message").html();
-
 //Declare hero & enemy HP variables, and display hero HP
-    var heroHP = 1;
+    var heroHP = 5;
     var enemyHP;
     $("#hero-hp").html("HP: " + heroHP);
 
 //Upon clicking the Continue Button, a new battle is prepared
-    document.getElementById("continue-button").addEventListener("click", displayEnemyEncounter, false);
+    $("#continue-button").click(displayEnemyEncounter);
 
     function displayEnemyEncounter() {
         $("#enemy-avatar-container").css("visibility", "visible");
@@ -26,69 +20,60 @@ $(document).ready(function() {
             //enemyHP = Math.floor(Math.random() * (40 - 20 + 1) + 20);
             enemyHP = Math.floor(Math.random() * (10 - 5 + 1) + 5);
             $("#enemy-info").css("visibility", "visible");
-            document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
+            $("#enemy-hp").html("HP: " + enemyHP);
         };
         generateNewEnemy();
     }
 
 //Upon clicking the Attack Button, the player progresses through the battle set up above.
-    document.getElementById("attack-button").addEventListener("click", initiateAttack, false);
+    $("#attack-button").click(initiateAttack);
 
     //Define function that runs through a single combat encounter
     function initiateAttack() {
         $("#attack-button").hide();
         heroAttacks();
         if (enemyHP <= 0) {
-            heroMessage.innerHTML = "Codey squashed the bug!";
+            $("#hero-message").html("Codey squashed the bug!");
             $("#enemy-avatar-container").css("visibility", "hidden");
             $("#attack-button").css("display", "none");
             $("#enemy-info").css("visibility", "hidden");
-            enemyMessage.innerHTML = "";
+            $("#enemy-message").html("");
             $("#continue-button").css("display", "inline");
-            document.getElementById("continue-button").removeEventListener("click", initiateAttack, false);
         } else  {
             setTimeout(enemyAttacks, 1500);
-            if (heroHP <= 0) {
-                setTimeout(function () {
-                    enemyMessage.innerHTML = "";
-                }, 3000)
-            }
         }
         setTimeout(function () {
-            enemyMessage.innerHTML = "";
+            $("#enemy-message").html("");
             $("#attack-button").show();
         }, 3000)
 
     }
 
-
     //Define function for hero's attack
     function heroAttacks() {
-        enemyMessage.innerHTML = "";
+        $("#enemy-message").html("");
         var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
-        heroMessage.innerHTML = "Hero deals " + heroAttackValue + " damage.";
+        $("#hero-message").html("Hero deals " + heroAttackValue + " damage.");
         enemyHP -= heroAttackValue;
         if (enemyHP > 0) {
-            document.getElementById("enemy-hp").innerHTML = "HP: " + enemyHP;
-        } else {
-            document.getElementById("enemy-hp").innerHTML = "HP: 0";
+            $("#enemy-hp").html("HP: " + enemyHP);
         }
     }
 
     //Define function for enemy's attack
     function enemyAttacks() {
-        heroMessage.innerHTML = "<br>";
+        $("#hero-message").html("");
         var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-        enemyMessage.innerHTML = "Enemy deals " + enemyAttackValue + " damage.";
+        $("#enemy-message").html("Enemy deals " + enemyAttackValue + " damage.");
         heroHP -= enemyAttackValue;
         if (heroHP > 0) {
-            document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
+            $("#hero-hp").html("HP: " + heroHP);
         } else {
-            document.getElementById("hero-hp").innerHTML = "HP: 0";
-            heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
-            //This option keeps the bug avatar in the same place upon Game Over
-                //$("#hero-avatar-container").css("visibility", "hidden");
-            //This option makes the bug avatar shift to the center upon Game Over
+            $("#hero-hp").html("HP: 0");
+            $("#hero-message").html("The enemy defeated the hero...\nGAME OVER");
+        //This option keeps the bug avatar in the same place upon Game Over
+            //$("#hero-avatar-container").css("visibility", "hidden");
+        //This option makes the bug avatar shift to the center upon Game Over
             $("#hero-avatar-container").hide();
             $("#attack-button").css("visibility", "hidden");
         }
