@@ -33,6 +33,7 @@ $(document).ready(function() {
 
     //Define function that runs through a single combat encounter
     function initiateAttack() {
+        $("#attack-button").hide();
         heroAttacks();
         if (enemyHP <= 0) {
             heroMessage.innerHTML = "Codey squashed the bug!";
@@ -54,7 +55,9 @@ $(document).ready(function() {
         }
         setTimeout(function () {
             enemyMessage.innerHTML = "";
+            $("#attack-button").show();
         }, 3000)
+
     }
 
 
