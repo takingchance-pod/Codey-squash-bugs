@@ -3,12 +3,14 @@ $(document).ready(function() {
 
 //Declare where hero & enemy text displays.
     var heroMessage = document.getElementById("hero-message");
+    // var heroMessage = $("#hero-message").html();
     var enemyMessage = document.getElementById("enemy-message");
+    // var enemyMessage = $("#enemy-message").html();
 
 //Declare hero & enemy HP variables, and display hero HP
-    var heroHP = 2;
+    var heroHP = 1;
     var enemyHP;
-    document.getElementById("hero-hp").innerHTML = "HP: " + heroHP;
+    $("#hero-hp").html("HP: " + heroHP);
 
 //Upon clicking the Continue Button, a new battle is prepared
     document.getElementById("continue-button").addEventListener("click", displayEnemyEncounter, false);
@@ -52,9 +54,6 @@ $(document).ready(function() {
                     // $("#hero-avatar-container").hide();
                     // $("#hero-avatar-container").css("display", "none");
                     // $(".test1").hide();
-                heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
-                enemyMessage.innerHTML = "";
-                $("#attack-button").css("visibility", "hidden");
                 setTimeout(function () {
                     enemyMessage.innerHTML = "";
                 }, 3000)
@@ -92,6 +91,10 @@ $(document).ready(function() {
         } else {
             document.getElementById("hero-hp").innerHTML = "HP: 0";
             heroMessage.innerHTML = "The enemy defeated the hero...\nGAME OVER";
+            //This option keeps the bug avatar in the same place upon Game Over
+                //$("#hero-avatar-container").css("visibility", "hidden");
+            //This option makes the bug avatar shift to the center upon Game Over
+            $("#hero-avatar-container").hide();
             $("#attack-button").css("visibility", "hidden");
         }
     }
