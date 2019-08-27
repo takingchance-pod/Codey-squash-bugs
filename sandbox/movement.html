@@ -66,7 +66,7 @@
     <input class="roll-Dice" type="button" value="Roll Dice">
 
 
-    <script src="/javascript/jquery-2.2.4.js"></script>
+    <script src="../javascript/jquery-2.2.4.js"></script>
 
     <script>
         var position = 0;
@@ -84,68 +84,37 @@
         }
 
         else if( position === 2){
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div3, .div2').css('background', '#99e699');
+
         }
 
         else if( position === 3){
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div4, .div3, .div2').css('background', '#99e699');
+
         }
 
         else if( position === 4){
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div5, .div4, .div3, .div2').css('background', '#99e699');
         }
 
         else if( position === 5){
-            $('.div6').css('background', '#99e699');
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div6, .div5, .div4, .div3, .div2').css('background', '#99e699');
+
         }
 
         else if( position === 6){
-            $('.div7').css('background', '#99e699');
-            $('.div6').css('background', '#99e699');
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div7, .div6, .div5, .div4, .div3, .div2').css('background', '#99e699');
+
         }
         else if( position === 7){
-            $('.div8').css('background', '#99e699');
-            $('.div7').css('background', '#99e699');
-            $('.div6').css('background', '#99e699');
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div8, .div7, .div6, .div5, .div4, .div3, .div2').css('background', '#99e699');
+
         }
         else if( position === 8){
-            $('.div9').css('background', '#99e699');
-            $('.div8').css('background', '#99e699');
-            $('.div7').css('background', '#99e699');
-            $('.div6').css('background', '#99e699');
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div9, .div8, .div7, .div6, .div5, .div4, .div3, .div2').css('background', '#99e699');
         }
         else if( position >= 9){
-            $('.div10').css('background', '#99e699');
-            $('.div9').css('background', '#99e699');
-            $('.div8').css('background', '#99e699');
-            $('.div7').css('background', '#99e699');
-            $('.div6').css('background', '#99e699');
-            $('.div5').css('background', '#99e699');
-            $('.div4').css('background', '#99e699');
-            $('.div3').css('background', '#99e699');
-            $('.div2').css('background', '#99e699')
+            $('.div10, .div9, .div8, .div7, .div6, .div5, .div4, .div3, .div2').css('background', '#99e699');
             alert('You Win')
         }
         });
