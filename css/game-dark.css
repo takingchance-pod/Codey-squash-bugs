@@ -38,6 +38,7 @@ main {
 }
 
 .move-bar {
+    background: #3C4248;
     border: 1px solid black;
     height: 100px;
     grid-area: 1 / 1 / 2 / 4;
@@ -45,6 +46,7 @@ main {
 }
 
 .viewport {
+    background: #3C4248;
     border: 1px solid black;
     height: 300px;
     grid-area: 2 / 1 / 3 / 4;
@@ -98,6 +100,7 @@ main {
 }
 
 .player-menu {
+    background: #3C4248;
     border: 1px solid black;
     height: 150px;
     width: 300px;
