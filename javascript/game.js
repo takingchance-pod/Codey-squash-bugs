@@ -11,7 +11,8 @@ $(document).ready(function() {
 
     function displayEnemyEncounter() {
         $("#enemy-avatar-container").css("visibility", "visible");
-        $("#hero-message").text("Uh-oh, a Bug has appeared in the code...");
+        $("#viewport-text-container").html
+        ("<h1 style='text-align: center'>Uh-oh, a Bug has appeared in the code...</h1>");
         $("#continue-button").css("display", "none");
         $("#attack-button").css("display", "inline");
 
@@ -33,7 +34,7 @@ $(document).ready(function() {
         $("#attack-button").hide();
         heroAttacks();
         if (enemyHP <= 0) {
-            $("#hero-message").html("Codey squashed the bug!");
+            $("#viewport-text-container").html("<h1 style='text-align:center'>Codey squashed the bug!</h1>");
             $("#enemy-avatar-container").css("visibility", "hidden");
             $("#attack-button").css("display", "none");
             $("#enemy-info").css("visibility", "hidden");
@@ -70,7 +71,7 @@ $(document).ready(function() {
             $("#hero-hp").html("HP: " + heroHP);
         } else {
             $("#hero-hp").html("HP: 0");
-            $("#hero-message").html("The enemy defeated the hero...\nGAME OVER");
+            $("#viewport-text-container").html("<h1 style='text-align:center'>The enemy defeated the hero...\nGAME OVER</h1>");
         //This option keeps the bug avatar in the same place upon Game Over
             //$("#hero-avatar-container").css("visibility", "hidden");
         //This option makes the bug avatar shift to the center upon Game Over
