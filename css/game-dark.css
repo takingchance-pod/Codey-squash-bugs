@@ -1,0 +1,131 @@
+* {
+    margin: 20px;
+    padding: 0;
+}
+
+body {
+    background: #111820;
+    color: #D0D4DD;
+}
+
+/*Use for trouble-shooting layout issues*/
+.test {
+    border: dashed purple 2px;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    /* build grid inside of here */
+    display: grid;
+    /*grid-template-rows: 20% 45% 25%;*/
+    grid-template-rows: 25% 50% 25%;
+    grid-template-columns: 1fr;
+}
+
+.start-hidden {
+    visibility: hidden;
+}
+
+.start-displayed {
+    visibility: visible;
+}
+
+.start-removed {
+    display: none;
+}
+
+.move-bar {
+    border: 1px solid black;
+    height: 100px;
+    grid-area: 1 / 1 / 2 / 4;
+    border-radius: 5px;
+}
+
+.viewport {
+    border: 1px solid black;
+    height: 300px;
+    grid-area: 2 / 1 / 3 / 4;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+
+.viewport-image-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.viewport-image-container img {
+    height: 200px;
+    margin: 0px;
+}
+
+.invader{
+    color:green;
+}
+
+.menu-container {
+    grid-area: 3 / 1 / 4 / 4;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+
+}
+
+.hero-info {
+    border: 1px solid #0a290a;
+    height: 150px;
+    width: 300px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background: #99e699;
+    color: #0a290a;
+    border-radius: 5px;
+}
+
+.hero-info h3, .player-menu h3, .enemy-info h3, .player-menu * {
+    text-align: center;
+}
+
+.hero-info ul, .enemy-info ul {
+    list-style: none;
+}
+
+.hero-info li, .enemy-info li {
+    margin: 5px;
+}
+
+.player-menu {
+    border: 1px solid black;
+    height: 150px;
+    width: 300px;
+    margin-top: 0px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.player-menu button {
+    font-size: 2em;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.enemy-info {
+    border: 1px solid #660000;
+    height: 150px;
+    width: 300px;
+    margin-right: 0px;
+    margin-top: 0px;
+    background: #ff9999;
+    color: #660000;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}

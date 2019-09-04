@@ -80,6 +80,21 @@ $(document).ready(function() {
         }
     }
 
+    // Toggle light/dark mode
+    // Source for code inside of if/else:
+    // https://stackoverflow.com/questions/19844545/replacing-css-file-on-the-fly-and-apply-the-new-style-to-the-page
+
+    $("#light-dark-toggle").click(function() {
+        var test = $("link").attr("href");
+        if (test === "css/game.css") {
+            var cssLink = $('link[href*="css/game.css"]');
+            cssLink.replaceWith('<link href="css/game-dark.css" type="text/css" rel="stylesheet">');
+        } else {
+            var cssLink = $('link[href*="css/game-dark.css"]');
+            cssLink.replaceWith('<link href="css/game.css" type="text/css" rel="stylesheet">');
+        }
+    })
+
     // Animation Piece
 
 });
