@@ -24,7 +24,8 @@ main {
     /* build grid inside of here */
     display: grid;
     /*grid-template-rows: 20% 45% 25%;*/
-    grid-template-rows: 24.5% 50% 24.5% 1%;
+    /*grid-template-rows: 24.5% 50% 24.5% 1%;*/
+    grid-template-rows: 20% 40% 25% 15%;
     grid-template-columns: 1fr;
 }
 
