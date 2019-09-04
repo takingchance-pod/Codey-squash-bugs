@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Codey Squashes Bugs: A JavaScript Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
-    <header id="main-header"><h1>Codey Squashes Bugs</h1></header>
+    <header id="main-header" class="font-press"><h1>Codey Squashes Bugs</h1></header>
     <main id="game-container">
         <section id="move-bar" class="move-bar">
             Codey's Movement Bar
         </section>
         <section  id="viewport" class="viewport">
-            <div id="viewport-text-container" class="viewport-text-container">
+            <div id="viewport-text-container" class="viewport-text-container font-press">
                 <h1 style="text-align:center">Let's get this party started!</h1>
             </div>
             <div id="viewport-image-container" class="viewport-image-container">
@@ -28,10 +29,10 @@
         </section>
         <section id="menu-container" class="menu-container">
             <section id="hero-info" class="hero-info">
-                <h3>Codey</h3>
+                <h3 class="font-press">Codey</h3>
                 <ul>
-                    <li id="hero-hp">HP: xx</li>
-                    <li id="hero-message">
+                    <li id="hero-hp" class="font-open">HP: xx</li>
+                    <li id="hero-message" class="font-open">
                         Codey the Junior Developer
                     </li>
                     <li>
@@ -41,21 +42,21 @@
                 </ul>
             </section>
             <section id="player-menu" class="player-menu">
-                <h3>Player Menu</h3>
-                <button id="continue-button" class="start-displayed">Continue</button>
-                <button id="attack-button" class="start-removed">Attack</button>
+                <h3 class="font-press">Player Menu</h3>
+                <button id="continue-button" class="start-displayed font-open">Continue</button>
+                <button id="attack-button" class="start-removed font-open">Attack</button>
             </section>
             <section id="enemy-info" class="enemy-info start-hidden">
-                <h3>Bug in the Code</h3>
+                <h3 class="font-press">Bug in the Code</h3>
                 <ul>
-                    <li id="enemy-hp">HP: xx</li>
-                    <li id="enemy-message">
+                    <li id="enemy-hp" class="font-open">HP: xx</li>
+                    <li id="enemy-message" class="font-open">
                         A Bug
                     </li>
                 </ul>
             </section>
         </section>
-        <button id="light-dark-toggle">Toggle light/dark mode</button>
+        <button id="light-dark-toggle" class="font-open">Toggle light/dark mode</button>
     </main>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

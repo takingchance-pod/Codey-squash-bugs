@@ -12,7 +12,7 @@ $(document).ready(function() {
     function displayEnemyEncounter() {
         $("#enemy-avatar-container").css("visibility", "visible");
         $("#viewport-text-container").html
-        ("<h1 style='text-align: center'>Uh-oh, a Bug has appeared in the code...</h1>");
+        ("<h1>Uh-oh, a Bug has<br>appeared in the code...</h1>");
         $("#continue-button").css("display", "none");
         $("#attack-button").css("display", "inline");
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
             $("#hero-hp").html("HP: " + heroHP);
         } else {
             $("#hero-hp").html("HP: 0");
-            $("#viewport-text-container").html("<h1 style='text-align:center'>The enemy defeated the hero...\nGAME OVER</h1>");
+            $("#viewport-text-container").html("<h1 style='text-align:center'>The enemy defeated the hero...<p>GAME OVER</p></h1>");
         //This option keeps the bug avatar in the same place upon Game Over
             //$("#hero-avatar-container").css("visibility", "hidden");
         //This option makes the bug avatar shift to the center upon Game Over
@@ -85,7 +85,7 @@ $(document).ready(function() {
     // https://stackoverflow.com/questions/19844545/replacing-css-file-on-the-fly-and-apply-the-new-style-to-the-page
 
     $("#light-dark-toggle").click(function() {
-        var test = $("link").attr("href");
+        var test = $("link").first().next().attr("href");
         if (test === "css/game.css") {
             var cssLink = $('link[href*="css/game.css"]');
             cssLink.replaceWith('<link href="css/game-dark.css" type="text/css" rel="stylesheet">');

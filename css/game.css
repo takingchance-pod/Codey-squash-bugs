@@ -8,6 +8,14 @@
     border: dashed purple 2px;
 }
 
+.font-press {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.font-open {
+    font-family: 'Open Sans', sans-serif;
+}
+
 h1 {
     text-align: center;
 }
