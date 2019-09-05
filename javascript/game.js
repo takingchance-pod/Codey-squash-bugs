@@ -1,10 +1,20 @@
 $(document).ready(function() {
     "use strict";
 
+//Declare hero and enemy objects
+    var hero = {
+        maxHP: 12,
+        currentHP: 12,
+        attackValues:
+            [0, 1, 3, 3, 3, 5]
+    };
+
 //Declare hero & enemy HP variables, and display hero HP
-    var heroHP = 5;
     var enemyHP;
-    $("#hero-hp").html("HP: " + heroHP);
+    $("#hero-hp").html("HP: " + hero.maxHP);
+
+
+
 
 //Upon clicking the Continue Button, a new battle is prepared
     $("#continue-button").click(displayEnemyEncounter);
@@ -66,9 +76,9 @@ $(document).ready(function() {
         $("#hero-message").html("");
         var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
         $("#enemy-message").html("Enemy deals " + enemyAttackValue + " damage.");
-        heroHP -= enemyAttackValue;
-        if (heroHP > 0) {
-            $("#hero-hp").html("HP: " + heroHP);
+        hero.currentHP -= enemyAttackValue;
+        if (hero.currentHP > 0) {
+            $("#hero-hp").html("HP: " + hero.currentHP);
         } else {
             $("#hero-hp").html("HP: 0");
             $("#viewport-text-container").html("<h1 style='text-align:center'>The enemy defeated the hero...<p>GAME OVER</p></h1>");
