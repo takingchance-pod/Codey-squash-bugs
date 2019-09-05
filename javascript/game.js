@@ -13,9 +13,6 @@ $(document).ready(function() {
     var enemyHP;
     $("#hero-hp").html("HP: " + hero.maxHP);
 
-
-
-
 //Upon clicking the Continue Button, a new battle is prepared
     $("#continue-button").click(displayEnemyEncounter);
 
@@ -28,7 +25,6 @@ $(document).ready(function() {
 
         //Embedded function to generate new enemy and display Enemy Info Window
         function generateNewEnemy() {
-            //enemyHP = Math.floor(Math.random() * (40 - 20 + 1) + 20);
             enemyHP = Math.floor(Math.random() * (10 - 5 + 1) + 5);
             $("#enemy-info").css("visibility", "visible");
             $("#enemy-hp").html("HP: " + enemyHP);
@@ -64,6 +60,8 @@ $(document).ready(function() {
     function heroAttacks() {
         $("#enemy-message").html("");
         var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+        // var heroAttackValue = hero.attackValues[Math.floor(Math.random() * hero.attackValues.length)];
+        console.log(heroAttackValue);
         $("#hero-message").html("Hero deals " + heroAttackValue + " damage.");
         enemyHP -= heroAttackValue;
         if (enemyHP > 0) {
