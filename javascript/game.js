@@ -9,6 +9,11 @@ $(document).ready(function() {
             [0, 1, 3, 3, 3, 5]
     };
 
+    var enemy = {
+        attackValues:
+            [0, 1, 3, 3, 3, 5]
+    };
+
 //Declare hero & enemy HP variables, and display hero HP
     var enemyHP;
     $("#hero-hp").html("HP: " + hero.maxHP);
@@ -60,8 +65,8 @@ $(document).ready(function() {
     //Define function for hero's attack
     function heroAttacks() {
         $("#enemy-message").html("");
-        var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
-        // var heroAttackValue = hero.attackValues[Math.floor(Math.random() * hero.attackValues.length)];
+        // var heroAttackValue = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+        var heroAttackValue = hero.attackValues[Math.floor(Math.random() * hero.attackValues.length)];
         console.log(heroAttackValue);
         $("#hero-message").html("Hero deals " + heroAttackValue + " damage.");
         enemyHP -= heroAttackValue;
@@ -73,7 +78,8 @@ $(document).ready(function() {
     //Define function for enemy's attack
     function enemyAttacks() {
         $("#hero-message").html("");
-        var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+        // var enemyAttackValue = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+        var enemyAttackValue = enemy.attackValues[Math.floor(Math.random() * enemy.attackValues.length)];
         $("#enemy-message").html("Enemy deals " + enemyAttackValue + " damage.");
         hero.currentHP -= enemyAttackValue;
         if (hero.currentHP > 0) {
