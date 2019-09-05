@@ -17,6 +17,7 @@ $(document).ready(function() {
     $("#continue-button").click(displayEnemyEncounter);
 
     function displayEnemyEncounter() {
+        $("#hero-message").html("");
         $("#enemy-avatar-container").css("visibility", "visible");
         $("#viewport-text-container").html
         ("<h1>Uh-oh, a Bug has<br>appeared in the code...</h1>");
