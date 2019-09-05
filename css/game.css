@@ -30,7 +30,7 @@ main {
     display: grid;
     /*grid-template-rows: 20% 45% 25%;*/
     /*grid-template-rows: 24.5% 50% 24.5% 1%;*/
-    grid-template-rows: 20% 40% 25% 15%;
+    grid-template-rows: 20% 45% 25% 10%;
     grid-template-columns: 1fr;
 }
 
@@ -135,6 +135,8 @@ main {
 #light-dark-toggle {
     grid-area: 4 / 1 / 5 / 2;
     width: 150px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 @media screen and (min-width: 992px) {
