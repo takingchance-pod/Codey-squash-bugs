@@ -57,7 +57,9 @@ $(document).ready(function() {
         }
         setTimeout(function () {
             $("#enemy-message").html("");
-            $("#attack-button").show();
+            if (enemyHP > 0) {
+                $("#attack-button").show();
+            }
         }, 3000)
 
     }
